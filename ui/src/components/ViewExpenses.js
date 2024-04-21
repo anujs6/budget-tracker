@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Button, Dialog, DialogTitle, TextField, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import {tableCellClasses} from '@mui/material/TableCell';
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -8,7 +8,7 @@ import axios from "axios";
 import { API_URL } from '../utils';
 
 
-export const ViewExpenses = ({isDialogOpen, setIsDialogOpen, fetchExpenses}) => {
+export const ViewExpenses = ({isDialogOpen, setIsDialogOpen}) => {
     const [deletingExpenseId, setDeletingExpenseId] = useState();
     const [editingExpenseId, setEditingExpenseId] = useState();
 
@@ -22,7 +22,21 @@ export const ViewExpenses = ({isDialogOpen, setIsDialogOpen, fetchExpenses}) => 
         }
     }
 
-    const expenses = fetchExpenses();
+    const [expenses, setExpenses] = useState([]);
+
+    const fetchExpenses = async () => {
+      try {
+        const {data} = await axios.get(API_URL);
+  
+        setExpenses(data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+  
+    useEffect(() => {
+      fetchExpenses();
+    }, []);
 
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
