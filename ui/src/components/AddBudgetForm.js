@@ -82,7 +82,7 @@ export const AddBudgetForm = ({fetchExpenses, expenses}) => {
             <Button variant="contained" onClick={addNewExpense}>Add Expense</Button>
             <Button variant="contained" onClick={() => setIsDialogOpen(true)}>View Expenses</Button>
         </div>
-        <ViewExpenses isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} expenses={expenses}></ViewExpenses>
+        <ViewExpenses isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} fetchExpenses={fetchExpenses} expenses={expenses}></ViewExpenses>
     </div>
   )
 }

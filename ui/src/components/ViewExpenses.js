@@ -8,7 +8,7 @@ import axios from "axios";
 import { API_URL } from '../utils';
 
 
-export const ViewExpenses = ({isDialogOpen, setIsDialogOpen, expenses}) => {
+export const ViewExpenses = ({isDialogOpen, setIsDialogOpen, fetchExpenses, expenses}) => {
     const [deletingExpenseId, setDeletingExpenseId] = useState();
     const [editingExpenseId, setEditingExpenseId] = useState();
 //    const [expenses, setExpenses] = useState([]);
