@@ -25,6 +25,7 @@ function App() {
 
   return (
     <div className="container">
+      {/* <AmplifySignOut /> */}
       <AddBudgetForm fetchExpenses={fetchExpenses} expenses={expenses} />
     </div>
   );
