@@ -7,7 +7,10 @@ import {styled} from '@mui/material/styles';
 
 export const Expense = ({expense, fetchTasks}) => {
     const {id, amount, category, description} = expense;
-
+    console.log("Expense:", expense);
+    console.log("Amount:", amount);
+    console.log("Category:", category);
+    console.log("Description:", description);
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
           backgroundColor: theme.palette.common.black,
