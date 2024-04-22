@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { AddBudgetForm } from "./components/AddBudgetForm";
 import axios from "axios";
 import { API_URL } from "./utils";
@@ -8,7 +8,7 @@ function App() {
 
   const fetchExpenses = async () => {
     try {
-      const {data} = await axios.get(API_URL);
+      const { data } = await axios.get(API_URL);
 
       setExpenses(data);
     } catch (e) {
@@ -19,17 +19,12 @@ function App() {
   useEffect(() => {
     fetchExpenses();
   }, []);
-  
-
-
-
 
   return (
     <div className="container">
-      <AddBudgetForm fetchExpenses={fetchExpenses} expenses={expenses}/>
+      <AddBudgetForm fetchExpenses={fetchExpenses} expenses={expenses} />
     </div>
   );
 }
-
 
 export default App;
