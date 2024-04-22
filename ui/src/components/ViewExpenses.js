@@ -6,6 +6,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import {styled} from '@mui/material/styles';
 import axios from "axios";
 import { API_URL } from '../utils';
+import { Expense } from './Expense';
 
 
 export const ViewExpenses = ({isDialogOpen, setIsDialogOpen, fetchExpenses, expenses}) => {
@@ -76,22 +77,7 @@ export const ViewExpenses = ({isDialogOpen, setIsDialogOpen, fetchExpenses, expe
             </TableHead>
             <TableBody>
                 {expenses.map((expense) => (
-                    <StyledTableRow
-                        key={expense.id}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                    >
-                        <StyledTableCell align="center">{expense.amount}</StyledTableCell>
-                        <StyledTableCell align="center">{expense.category}</StyledTableCell>
-                        <StyledTableCell align="center">{expense.description}</StyledTableCell>
-                        <StyledTableCell align="center">
-                            <Button disabled={editingExpenseId === expense.id} variant="contained" /*onClick={handleEditExpense(expense.id)}*/>
-                                <EditIcon />
-                            </Button>
-                            <Button disabled={deletingExpenseId === expense.id} variant="contained" onClick={handleDeleteExpense(expense.id)}>
-                                <DeleteIcon />
-                            </Button>
-                        </StyledTableCell>
-                    </StyledTableRow>
+                    <Expense expense={expense} key={expense.id} fetchExpenses={fetchExpenses} />
                 ))}
             </TableBody>
             </Table>
