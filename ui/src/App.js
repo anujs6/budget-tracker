@@ -3,7 +3,7 @@ import { AddBudgetForm } from "./components/AddBudgetForm";
 import axios from "axios";
 import { API_URL } from "./utils";
 
-import {Auth, Amplify} from  'aws-amplify';
+
 import {withAuthenticator} from '@aws-amplify/ui-react';
 
 function App() {
