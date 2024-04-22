@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="container">
-      <AddBudgetForm fetchExpenses={fetchExpenses}/>
+      <AddBudgetForm fetchExpenses={fetchExpenses} expenses={expenses}/>
     </div>
   );
 }

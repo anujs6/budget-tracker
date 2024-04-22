@@ -8,10 +8,10 @@ import axios from "axios";
 import { API_URL } from '../utils';
 
 
-export const ViewExpenses = ({isDialogOpen, setIsDialogOpen}) => {
+export const ViewExpenses = ({isDialogOpen, setIsDialogOpen, expenses}) => {
     const [deletingExpenseId, setDeletingExpenseId] = useState();
     const [editingExpenseId, setEditingExpenseId] = useState();
-    const [expenses, setExpenses] = useState([]);
+//    const [expenses, setExpenses] = useState([]);
 
     const handleDeleteExpense = async (expenseId) => {
         try {
@@ -25,20 +25,20 @@ export const ViewExpenses = ({isDialogOpen, setIsDialogOpen}) => {
 
     
 
-    const fetchExpenses = async () => {
-      try {
-        const {data} = await axios.get(API_URL);
+    // const fetchExpenses = async () => {
+    //   try {
+    //     const {data} = await axios.get(API_URL);
   
-        setExpenses(data);
-        console.log("Expenses updated:", data);
-      } catch (e) {
-        console.log(e);
-      }
-    };
+    //     setExpenses(data);
+    //     console.log("Expenses updated:", data);
+    //   } catch (e) {
+    //     console.log(e);
+    //   }
+    // };
   
-    useEffect(() => {
-      fetchExpenses();
-    }, []);
+    // useEffect(() => {
+    //   fetchExpenses();
+    // }, []);
 
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
