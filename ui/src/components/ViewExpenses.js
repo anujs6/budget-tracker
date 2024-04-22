@@ -30,6 +30,7 @@ export const ViewExpenses = ({isDialogOpen, setIsDialogOpen}) => {
         const {data} = await axios.get(API_URL);
   
         setExpenses(data);
+        console.log("Expenses updated:", data);
       } catch (e) {
         console.log(e);
       }
