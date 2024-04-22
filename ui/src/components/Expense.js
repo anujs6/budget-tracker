@@ -37,10 +37,10 @@ export const Expense = ({expense, fetchTasks}) => {
         <StyledTableCell align="center">{category}</StyledTableCell>
         <StyledTableCell align="center">{description}</StyledTableCell>
         <StyledTableCell align="center">
-            <Button disabled={editingExpenseId === id} variant="contained" /*onClick={handleEditExpense(id)}*/>
+            <Button /*disabled={editingExpenseId === id}*/ variant="contained" /*onClick={handleEditExpense(id)}*/>
                 <EditIcon />
             </Button>
-            <Button disabled={deletingExpenseId === id} variant="contained" /*onClick={handleDeleteExpense(id)}*/>
+            <Button /*disabled={deletingExpenseId === id}*/ variant="contained" /*onClick={handleDeleteExpense(id)}*/>
                 <DeleteIcon />
             </Button>
         </StyledTableCell>
