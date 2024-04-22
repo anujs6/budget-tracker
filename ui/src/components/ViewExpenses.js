@@ -11,6 +11,7 @@ import { API_URL } from '../utils';
 export const ViewExpenses = ({isDialogOpen, setIsDialogOpen}) => {
     const [deletingExpenseId, setDeletingExpenseId] = useState();
     const [editingExpenseId, setEditingExpenseId] = useState();
+    const [expenses, setExpenses] = useState([]);
 
     const handleDeleteExpense = async (expenseId) => {
         try {
@@ -22,7 +23,7 @@ export const ViewExpenses = ({isDialogOpen, setIsDialogOpen}) => {
         }
     }
 
-    const [expenses, setExpenses] = useState([]);
+    
 
     const fetchExpenses = async () => {
       try {
